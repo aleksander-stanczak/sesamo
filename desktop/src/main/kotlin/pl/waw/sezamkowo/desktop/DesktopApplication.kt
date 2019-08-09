@@ -9,13 +9,25 @@ import javafx.util.Callback
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.context.ConfigurableApplicationContext
+import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.ComponentScan
 import org.springframework.context.annotation.Configuration
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories
+import java.util.concurrent.ExecutorService
+import java.util.concurrent.Executors
 
 @EnableMongoRepositories("pl.waw.sezamkowo")
 @Configuration
 class MongoConfiguration
+
+@Configuration
+class ThreadPoolConfiguration {
+
+    @Bean
+    fun executorService(): ExecutorService {
+        return Executors.newFixedThreadPool(6)
+    }
+}
 
 @ComponentScan("pl.waw.sezamkowo")
 @SpringBootApplication
