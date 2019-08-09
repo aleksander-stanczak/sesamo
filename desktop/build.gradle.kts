@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("org.springframework.boot") apply false
+    id("org.springframework.boot")
     id("io.spring.dependency-management")
     kotlin("jvm")
     kotlin("plugin.spring")
@@ -10,12 +10,6 @@ plugins {
 group = "pl.waw.sezamkowo"
 version = "0.0.1-SNAPSHOT"
 
-dependencyManagement {
-    imports {
-        mavenBom(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES)
-    }
-}
-
 repositories {
     mavenCentral()
 }
@@ -23,9 +17,9 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
     implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("org.springframework.boot:spring-boot-starter")
     implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
-
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    implementation(project(":core"))
 }
 
 tasks.withType<KotlinCompile> {

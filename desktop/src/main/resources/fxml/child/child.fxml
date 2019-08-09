@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="569.0" prefWidth="678.0" xmlns="http://javafx.com/javafx/8.0.65"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.waw.sezamkowo.desktop.child.ChildView">
+    <children>
+        <TableView fx:id="table" layoutX="200.0" layoutY="35.0" prefHeight="312.0" prefWidth="633.0"
+                   AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                   AnchorPane.topAnchor="0.0">
+            <columns>
+                <TableColumn fx:id="nameColumn" prefWidth="170.0" text="Imię"/>
+                <TableColumn fx:id="dateBirthColumn" prefWidth="160.0" text="Data Urodzenia"/>
+                <TableColumn fx:id="parent1Column" prefWidth="183.0" text="Rodzic 1"/>
+                <TableColumn fx:id="parent2Column" prefWidth="164.0" text="Rodzic 2"/>
+            </columns>
+        </TableView>
+        <HBox alignment="CENTER" layoutX="350.0" layoutY="300.0" prefHeight="70.0" prefWidth="328.0" spacing="5.0"
+              AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="0.0">
+            <children>
+                <!--<Button mnemonicParsing="false" onAction="#presence" text="Obecności" />
+                <Button mnemonicParsing="false" onAction="#holidays" text="Dni wolne" />
+                <Button mnemonicParsing="false" onAction="#add" text="Dodaj" />
+                <Button mnemonicParsing="false" onAction="#edit" text="Edytuj" />
+                <Button mnemonicParsing="false" onAction="#delete" text="Usuń" />-->
+            </children>
+        </HBox>
+        <HBox AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="10.0">
+            <children>
+                <ChoiceBox fx:id="monthChoice" prefWidth="150.0"/>
+                <ChoiceBox fx:id="nurseryTypeChoice" prefWidth="150.0"/>
+            </children>
+        </HBox>
+        <!--<Button layoutX="160.0" layoutY="534.0" mnemonicParsing="false" onAction="#generateAllChildrenPresenceReport" text="Generuj raport obecności" />-->
+    </children>
+</AnchorPane>

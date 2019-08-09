@@ -1,0 +1,8 @@
+spring:
+  data:
+    mongodb:
+      database:
+        "sesamo"
+my:
+  url:
+    "https://www.sezamkowo.waw.pl/"
