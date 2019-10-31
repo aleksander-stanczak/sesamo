@@ -2,10 +2,12 @@ package pl.waw.sezamkowo.desktop.child
 
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
+import javafx.scene.control.ChoiceBox
 import javafx.scene.control.TableColumn
 import javafx.scene.control.TableView
 import javafx.scene.layout.AnchorPane
 import org.springframework.beans.factory.annotation.Autowired
+import pl.waw.sezamkowo.core.domain.child.NurseryType
 import pl.waw.sezamkowo.desktop.common.View
 import java.net.URL
 import java.time.LocalDate
@@ -25,7 +27,7 @@ class ChildView : Initializable {
 
     @FXML
     lateinit var table: TableView<ChildTableRow>
-    //    @FXML lateinit var nurseryTypeChoice: ChoiceBox<NurseryType>
+        @FXML lateinit var nurseryTypeChoice: ChoiceBox<NurseryType>
 //    @FXML lateinit var monthChoice: ChoiceBox<YearMonth>
     @FXML
     lateinit var root: AnchorPane
@@ -38,14 +40,14 @@ class ChildView : Initializable {
 //    val dao = Repositories.childInfoDao
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
-//        loadStylesheets()
+        loadStylesheets()
         setupTable()
-//        setupChoices()
+        setupChoices()
         loadData()
     }
 
-    //    private fun setupChoices() {
-//        nurseryTypeChoice.setKotlinConverter { it.prettyName }
+        private fun setupChoices() {
+        nurseryTypeChoice.setKotlinConverter { it.prettyName }
 //        nurseryTypeChoice.items.setAll(NurseryType.values().toList())
 //        monthChoice.showingProperty().addListener { bean, old, new ->
 //            if (new && monthChoice.items.isEmpty()) {
@@ -64,11 +66,11 @@ class ChildView : Initializable {
 //                })
 //            }
 //        }
-//    }
-//
-//    private fun loadStylesheets() {
-//        root.stylesheets.add("pl/waw/sezamkowo/sesame/ui/styles.css")
-//    }
+    }
+
+    private fun loadStylesheets() {
+        root.stylesheets.add("fxml/styles.css")
+    }
 
     private fun loadData() {
         viewModel.loadData()

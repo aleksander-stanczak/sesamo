@@ -5,7 +5,7 @@ import javafx.beans.property.SimpleStringProperty
 import pl.waw.sezamkowo.core.application.child.dto.ChildDto
 import pl.waw.sezamkowo.core.domain.child.Parent
 
-class ChildTableRow(private val child: ChildDto) {
+class ChildTableRow(child: ChildDto) {
 
     val nameProperty = SimpleStringProperty(child.name)
     val dateBirthProperty = SimpleObjectProperty(child.dateBirth)

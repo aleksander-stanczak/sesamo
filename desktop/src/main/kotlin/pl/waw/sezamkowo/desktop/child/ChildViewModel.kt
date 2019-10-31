@@ -16,7 +16,6 @@ class ChildViewModel(private val childManagementService: ChildManagementService,
         executorService.submit(
                 LongTaskWithData(
                         action = {
-                            println("LOAD")
                             childManagementService.listChildren().map(::ChildTableRow)
                         },
                         onFinish = {
